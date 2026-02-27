@@ -1,37 +1,43 @@
-# In Python, two of the most common functions you'll need to know for coding comps is map() and split()
+import sys
+import math
+import string
 
-# map() iterates over each item in a list and turns it into a memory object.
-# you have to convert it into a list with list() if you want to use it.
+# In competitive programming, input comes from standard input (stdin),
+# not from interactive prompts like we've been doing in class.
 
-# split() separates all the parts of a single line, so you can use them separately. 
+# map() applies a function to each item in an iterable.
+# It returns an iterator (a lazy object) which MUST be converted to a list() to use properly.
+# split() separates a single string by whitespace, so you can use each part separately.
 
 numbers = ["1", "2", "3"]
-print("Original list:", numbers)
+print("Original list of strings:", numbers)
 
+# Use map() as a quick way to iterate the list and convert strings to numbers: 
+# map() takes 2 arguement to apply int to each string in the list.
 result = map(int, numbers)
-# Apply the int() function to each element in numbers, producing a "lazy" map object, stored in memory.
 
+# This creates a map object.
 print("Map object:", result)
-# Show that result is a map object (an iterator), not yet a list.
+# The map object returns only a memory location id. It must be convereted to a string.
 
 converted = list(result)
-# Force evaluation of the map object by converting it into a list of integers.
+# Converting forces evaluation of the iterator.
 
 print("After converting map to list:", converted)
-# Display the fully evaluated list of integers.
 
-print("\n--- Using map() with input ---")
-# Demonstrate converting user input using map().
 
-# Example input to type when prompted: 3 7
-user_input = input("Enter two numbers separated by space: ")
-split_user_input = user_input.split()
-print(split_user_input)
+print("\n--- Using standard input ---")
+# Read one line from standard input with readline() and rstrip() cleans up special characters like \n and \r and spaces.
+# Example expected input line:
+# 3 7
+line = sys.stdin.readline().rstrip()
+print("Before split", line)
+# split() separates the line into string tokens.
+split_line = line.split()
+print("After split():", split_line)
 
-a, b = map(int, split_user_input)
-# Read a line of input, split it into tokens, convert each to int, and unpack into a and b.
+# map(int, ...) converts each token into an integer.
+a, b = map(int, split_line)
 
 print("a =", a)
 print("b =", b)
-print("Sum =", a + b)
-print("Product =", a * b)
