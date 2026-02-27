@@ -39,7 +39,7 @@ a, b = map(int, split_line)
 print("a =", a)
 print("b =", b)
 
-print("EXAMPLE ON HOW TO LOOP OVER MULTIPLE LINES AND MAP AND SPLIT THEM")
+print("EXAMPLE ON HOW TO LOOP OVER MULTIPLE LINES + MAP + SPLIT THEM")
 print()
 # First, iterate over every line in standard input until End of File (EOF).
 for l in sys.stdin:
@@ -54,6 +54,3 @@ for l in sys.stdin:
     # compute the product of both numbers
     # make sure they are only separated by a space
     print(total, product)
-
-
-
