@@ -81,6 +81,3 @@ input = sys.stdin.readline
 * Python Official Docs → [https://docs.python.org/3/](https://docs.python.org/3/)
 * Competitive Programming Basics → [https://cp-algorithms.com/](https://cp-algorithms.com/)
 
----
-
-If you want, I can make a **“CodeQuest survival cheat sheet”** with only the 10 most important lines to remember during contests.
